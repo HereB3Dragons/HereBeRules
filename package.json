@@ -2,13 +2,13 @@
   "name": "com.herebedragons.herebejson",
   "version": "1.0.0",
   "displayName": "HereBeJSON",
-  "description": "Wrapper over TinyJson",
+  "description": "Just a wrapper over TinyJson",
   "unity": "2019.4",
   "unityRelease": "11f1",
   "keywords": [
-    "UI",
-    "Elements",
-    "Border"
+    "JSON",
+    "Serialization",
+    "Performance"
   ],
   "author": {
     "name": "Tiago",
@@ -19,7 +19,7 @@
   "dependencies": {
   },
   "repository": {
-    "url": "https://github.com/HereB3Dragons/HereBeElements.git",
+    "url": "https://github.com/HereB3Dragons/HereBeJSON.git ",
     "type": "git",
     "revision": "43745ffec1bfe433cd3e02e88eb1f393097dffb9"
   }

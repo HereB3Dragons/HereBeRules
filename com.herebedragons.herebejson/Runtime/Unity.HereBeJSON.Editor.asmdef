@@ -1,0 +1,12 @@
+﻿{
+  "name": "Unity.HereBeJSON",
+  "references": [],
+  "includePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
