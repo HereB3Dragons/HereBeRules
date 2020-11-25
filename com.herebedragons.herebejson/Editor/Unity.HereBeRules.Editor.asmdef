@@ -1,5 +1,5 @@
 ﻿{
-  "name": "Unity.HereBeJSON.Editor",
+  "name": "Unity.HereBeRules.Editor",
   "references": [],
   "includePlatforms": [
     "Editor"

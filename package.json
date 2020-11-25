@@ -1,13 +1,13 @@
 {
-  "name": "com.herebedragons.herebejson",
+  "name": "com.herebedragons.hereberules",
   "version": "1.0.0",
-  "displayName": "HereBeJSON",
-  "description": "Just a wrapper over TinyJson",
+  "displayName": "HereBeRules",
+  "description": "Framework for turn based games",
   "unity": "2019.4",
   "unityRelease": "11f1",
   "keywords": [
-    "JSON",
-    "Serialization",
+    "Rules",
+    "Turn Management",
     "Performance"
   ],
   "author": {
@@ -19,7 +19,7 @@
   "dependencies": {
   },
   "repository": {
-    "url": "https://github.com/HereB3Dragons/HereBeJSON.git ",
+    "url": "https://github.com/HereB3Dragons/HereBeRules.git",
     "type": "git",
     "revision": "b8f0c733899c7931dfe0f021730ffc581ea9468e"
   }
