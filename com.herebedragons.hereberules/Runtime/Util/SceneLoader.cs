@@ -59,7 +59,7 @@ namespace HereBeRules.Util
             Load(scene, 0f, null, args);
         }
         
-        public void Load(string scene, float delay = 0, Action<Transform> callback = null, Dictionary<string, string> args = null)
+        public void Load(string scene, float delay = 0, Action<Transform> callback = null, Dictionary<string, string> args = null, bool additive = false)
         {
             _sceneToLoad = scene;
             _delay = delay;
@@ -67,7 +67,7 @@ namespace HereBeRules.Util
             _callback = callback;
             _isRunning = true;
             _parameters = args;
-            StartCoroutine(LoadNewScene(_sceneToLoad));
+            StartCoroutine(LoadNewScene(_sceneToLoad, additive));
         }
 
         public static void GetParams(out Dictionary<string, string> loaderParams)
@@ -90,11 +90,11 @@ namespace HereBeRules.Util
                 _elapsedTime += Time.deltaTime;
         }
         
-        IEnumerator LoadNewScene(string scene)
+        IEnumerator LoadNewScene(string scene, bool additive = false)
         {
            yield return null;
            
-           AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(scene);
+           AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(scene, additive ? LoadSceneMode.Additive : LoadSceneMode.Single);
            asyncOperation.allowSceneActivation = false;
            while (!asyncOperation.isDone)
            {
@@ -102,11 +102,16 @@ namespace HereBeRules.Util
                // Check if the load has finished
                if (asyncOperation.progress >= 0.9f)
                {
-                   //Wait to you press the space key to activate the Scene
                    if (_elapsedTime > _delay)
                    {
                        //Activate the Scene
                        asyncOperation.allowSceneActivation = true;
+                       if (additive)
+                       {
+                           Scene s = SceneManager.GetSceneByName(scene);
+                           SceneManager.SetActiveScene(s);
+                       }
+
                        if (!HasCallback && !HasParams)
                            DestroyInstance();
                    }
